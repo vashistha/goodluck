@@ -6,14 +6,13 @@ This is a demo application based on Spring-boot and JSF framework.
 ------------------------------------
 1. java 1.8
 2. maven 3.3+
-3. available port number 9085 (change this by editing application.properties file)
+3. available port number 9085 (change it by editing application.properties file)
 
 ###How to run
 ------------------------------------
-1. Download or pull the project.
-2. Set java classpasth to use JDK1.8+
-3. run the command $mvn clean install
-4. run the command $mvn spring-boot:run
+1. Set java classpath to use JDK1.8+
+2. run the command $mvn clean install
+3. run the command $mvn spring-boot:run
 
 ###How to test
 -----------------------------------
