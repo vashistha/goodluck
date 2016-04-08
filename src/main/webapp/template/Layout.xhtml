@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:f="http://xmlns.jcp.org/jsf/core"
+  xmlns:h="http://xmlns.jcp.org/jsf/html"
+  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+  xmlns:b="http://bootsfaces.net/ui">
+
+<h:head>
+  <f:facet name="first">
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+  </f:facet>
+
+  <f:facet name="last">
+    <title><ui:insert name="title">MySky TV</ui:insert></title>
+  </f:facet>
+  <h:outputStylesheet name="css/mystyle.css" />
+</h:head>
+
+<h:body>
+  <b:container>
+    <div id="container">
+      <b:well size="sm">
+        <div id="header">
+          <h4><h:outputText value="Welcome to MySkyTV"/></h4>
+        </div>
+      </b:well>
+      <b:well>
+      <div id="content">
+        <ui:insert name="contentArea">
+          </ui:insert>  
+      </div>
+      </b:well>
+      <b:well size="sm">
+        <div id="footer">
+          <h5>Footer area</h5>
+        </div>
+      </b:well>
+    </div>
+  </b:container>
+</h:body>
+
+</html>

@@ -1,0 +1,27 @@
+#container {
+  margin: 5px auto;
+  font-size: 1.1em;  
+}
+
+
+#content {
+  min-height: 100px;
+}
+#content .main-panel .ui-panel-content {
+  min-height: 100px !important;
+}
+#header,
+#footer {
+  text-align: center;
+}
+#content .ui-panel {
+  border: none;
+}
+.well {
+	margin-bottom: 1px !important;
+	background-color: transparent !important;
+}
+
+.boldFont{
+	font-weight: bold;
+}

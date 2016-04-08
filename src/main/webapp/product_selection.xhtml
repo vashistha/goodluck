@@ -1,0 +1,49 @@
+<ui:composition template="/template/Layout.xhtml" xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:f="http://xmlns.jcp.org/jsf/core"
+  xmlns:h="http://xmlns.jcp.org/jsf/html" 
+  xmlns:ui="http://xmlns.jcp.org/jsf/facelets" 
+  xmlns:b="http://bootsfaces.net/ui"
+  xmlns:p="http://primefaces.org/ui">
+  <ui:define name="title">Sky Products</ui:define>
+  
+  <ui:define name="contentArea">
+  <f:metadata>
+    <f:viewAction action="#{productBean.init}" />
+  </f:metadata>
+
+  <h:form id="prod_form">
+  <!-- Responsive layout -->
+    <b:panelGrid id ="product_panel_grid" colSpans="4,4,4">
+     <b:panel title="Sports" look="primary" collapsible="false" style="min-height: 200px">
+       <p:selectManyCheckbox id="sport" layout="grid" columns="1" value="#{productBean.localSelected}">
+          <f:selectItems value="#{productBean.localProducts}" var="localProd" itemLabel="#{localProd.name}" itemValue="#{localProd.name}" />
+          <p:ajax event="change" update="basket"/>
+        </p:selectManyCheckbox>
+      </b:panel>
+      
+     <b:panel title="News" look="info" collapsible="false" style="min-height: 200px">
+        <p:selectManyCheckbox id="news" layout="grid" columns="1" value="#{productBean.defaultSelected}">
+          <f:selectItems value="#{productBean.defaultProducts}" var="defaultProd" itemLabel="#{defaultProd.name}" itemValue="#{defaultProd.name}" />
+          <p:ajax event="change" update="basket" />
+        </p:selectManyCheckbox>
+      </b:panel>
+     
+     <b:panel id="basket" title="Basket" look="success" collapsible="false" style="min-height: 200px">
+       <ui:repeat value="#{productBean.localSelected}" var="localProd">
+          <h:outputText value="#{localProd}"/>  <br/>
+        </ui:repeat>
+        <ui:repeat value="#{productBean.defaultSelected}" var="defaultProd">
+          <h:outputText value="#{defaultProd}"/>  <br/>
+        </ui:repeat>
+        <b:button value="Checkout" outcome="confirmation"  look="primary"/>
+     </b:panel>
+      
+     <b:button value="Back" outcome="index"/>
+  
+    </b:panelGrid>
+    <h:outputText value="Customer id from cookies = " />
+    <h:outputText value="#{productBean.customerId}" />
+    </h:form>
+  </ui:define>
+
+</ui:composition>

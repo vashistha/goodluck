@@ -1,0 +1,27 @@
+<ui:composition template="/template/Layout.xhtml" xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:b="http://bootsfaces.net/ui">
+  <ui:define name="title">MySky</ui:define>
+
+  <ui:define name="contentArea">
+    <h:form id="welcome">
+      
+      <b:panelGrid colSpans="6,6">
+        <b:panelGrid colSpans="12" style="width:80%">
+           
+           <b:inputText id="customerID" value="#{welcomeBean.customerId}" required="true" label="Enter customer Id" renderLabel="true"/>
+           <b:commandButton value="Continue" action="#{welcomeBean.toProductSelection}"  look="primary"/>
+        </b:panelGrid>
+      </b:panelGrid>
+      
+      <b:panelGrid colSpans="12" style="width:80%; margin-top:30px">
+        <h:outputText value="Customer Id is saved and retrieved from cookies"/>
+        <h:outputText value="To test LONDON location, enter customer id with prefix 'LON'."/>
+        <h:outputText value="To test LIVERPOOL location, enter customer id with prefix 'LIV'."/>
+        <h:outputText value="If prefix is not 'LON' or 'LIV', then customer will recieve default product."/>
+      </b:panelGrid>
+    </h:form>
+  </ui:define>
+
+</ui:composition>

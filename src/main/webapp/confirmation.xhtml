@@ -1,0 +1,26 @@
+<ui:composition template="/template/Layout.xhtml" xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:b="http://bootsfaces.net/ui">
+  <ui:define name="title">Confirmation</ui:define>
+
+  <ui:define name="contentArea">
+     
+      <b:panel title="Confirmation" look="success" collapsible="false">
+        <h:outputText value="Selected products are:" styleClass="boldFont"/>  <br/>
+        <ui:repeat value="#{productBean.localSelected}" var="localProd">
+          <h:outputText value="#{localProd}"/>  <br/>
+        </ui:repeat>
+        <ui:repeat value="#{productBean.defaultSelected}" var="defaultProd">
+          <h:outputText value="#{defaultProd}"/>  <br/>
+        </ui:repeat>
+      </b:panel>
+    
+    <br/>
+    <h:outputText value="Customer id: " styleClass="boldFont"/>
+    <h:outputText value="#{productBean.customerId}" />
+    <br/>
+      <b:button value="Home page" outcome="index"  look="primary"/>
+  </ui:define>
+
+</ui:composition>
